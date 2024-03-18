@@ -39,7 +39,7 @@ namespace pxt {
         return getLzmaAsync()
             .then(lzma => new Promise<Uint8Array>((resolve, reject) => {
                 try {
-                    lzma.compress(text, 7, (res: any, error: any) => {
+                    lzma.compress(text, 1, (res: any, error: any) => {
                         if (error) pxt.reportException(error);
                         resolve(error ? undefined : new Uint8Array(res));
                     })
